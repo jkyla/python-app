@@ -12,3 +12,13 @@ soup = BeautifulSoup(page.content, 'html.parser')
 title = soup.find(id="productTitle").get_text()
 
 print(title.strip())
+
+
+import urllib2
+from bs4 import BeautifulSoup
+quote_page = 'https://amazon.com'
+page = urllib2.urlopen(quote_page)
+soup = BeautifulSoup(page, 'html.parser')
+name_box = soup.find('h1', attrs{class': 'name'})
+name = name_box.text.strip()
+print(name)
